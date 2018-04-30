@@ -1,0 +1,10 @@
+# Node ignores
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Go ignores
+
+# Sigil ignores
+tasks.txt
+
