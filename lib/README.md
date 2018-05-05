@@ -5,17 +5,9 @@ The core library supplies functions necessary to interface with the database thr
 ```
 // types
 
-enum TaskStatus {
-  Pre = -1,
-  Triaged = 0,
-  Started = 1,
-  Aborted = 2,
-  Complete = 3,
-}
-
 struct Task {
   string refid,
-  TaskStatus status,
+  string status,
   string project,
   int size,
   string description,

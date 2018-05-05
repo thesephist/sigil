@@ -23,13 +23,13 @@ Alongside the flat-file database, Sigil will store each task as a single Unicode
 The Unicode string representation of a task is:
 
 ```
-{#123456abc} [v] project-name/sub-name 3: Work on the Sigil C library #:2018-05-03 #ref:123456xyz
+{#123456abc} [-2018-04-05T03:04:01v2018-05-03T21:03:21] project-name/sub-name 3: Work on the Sigil C library #:2018-05-03 #ref:123456xyz
 ```
 
 It breaks down this way:
 
 - `{#123456abc}`: Unique task reference ID
-- `[v]`: Status of task completion, one of `p` (not triaged), ` ` (not started), `-` (in progress), `x` (aborted), and `v` (complete). The "not triaged" mark is experimental and may be replaced later with an `inbox/` project instead.
+- `[-2018-04-05T03:04:01v2018-05-03T21:03:21]`: Status of task completion, one of `p` (not triaged), ` ` (not started), `-` (in progress), `x` (aborted), and `v` (complete). The "not triaged" mark is experimental and may be replaced later with an `inbox/` project instead. These symbols are followed by ISO date strings of when the respective statuses were marked.
 - `project-name/sub-name`: Despite Sigil's flat-file DB, tasks are organized into nestable "projects". The project string identifies projects and sub-projects that contains the task.
 - `3`: Task size. This is used to denote the relative amount of effort required to complete the task, and is used for productivity analysis and planning.
 - `Work on the Sigil C library`: Task description / name. Markdown formatting, including links, is supported here. This may contain any non-control Unicode character, including Emojis and whitespace. If there is a newline or line break here, it will create a literal line break in the DB file, since each task is delimited by the task reference ID.
