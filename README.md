@@ -33,11 +33,10 @@ It breaks down this way:
 - `project-name/sub-name`: Despite Sigil's flat-file DB, tasks are organized into nestable "projects". The project string identifies projects and sub-projects that contains the task.
 - `3`: Task size. This is used to denote the relative amount of effort required to complete the task, and is used for productivity analysis and planning.
 - `Work on the Sigil C library`: Task description / name. Markdown formatting, including links, is supported here. This may contain any non-control Unicode character, including Emojis and whitespace. If there is a newline or line break here, it will create a literal line break in the DB file, since each task is delimited by the task reference ID.
-- `#dev`: This is the most basic kind of a tag. Tags are parsed out separately in the Sigil parser, to make it easier to search for tasks with specific tags or groups of tags. Tags differ from projects, in that a project represents a coherently group of tasks leading to a complete work, and a tag is used to denote attributes of a task, like the tools it requires or the kind of work involved (#dev, #design, #admin).
-- `#d:2018-05-03`: Due date, in the for of ISO date. It's just a date here, but it may optionally contain time and time zone. When being saved, specified times will be standardized into UTC from the client's time zone.
+- `@2018-05-03`: Due date, in the for of ISO date. It's just a date here, but it may optionally contain time and time zone. When being saved, specified times will be standardized into UTC from the client's time zone. This can also alternative be: `every/[weekday|day of month]`, `every2[weekday|day of month]` (every other, etc.), `q` (every quarter), and `q2` or `q[n]` (every n quarters).
 - `#ref:123456xyz`: A task may reference any other task as a "related" task, which is a cousin of the notion of "nested tasks".
 
-## Tagging and filtering
+## Filtering
 
 The syntax of plaintext tasks is designed to allow almost any kind of filtering used frequently to be possible via generic fuzzy-string searches through the plaintext DB.
 
