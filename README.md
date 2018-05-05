@@ -23,7 +23,7 @@ Alongside the flat-file database, Sigil will store each task as a single Unicode
 The Unicode string representation of a task is:
 
 ```
-{#123456abc} [v] project-name/sub-name 3: Work on the Sigil C library #dev #d:2018-05-03 #ref:123456xyz
+{#123456abc} [v] project-name/sub-name 3: Work on the Sigil C library #:2018-05-03 #ref:123456xyz
 ```
 
 It breaks down this way:
@@ -44,17 +44,21 @@ The syntax of plaintext tasks is designed to allow almost any kind of filtering 
 
 There are currently three clients in the works. They all share a common backend, which will probably be written in C and maybe compiled to WebAssembly.
 
-# Sigil CLI
+### Sigil CLI
 
 The CLI will be a wrapper written in Go around the standard C library.
 
-# Sigil Web
+### Sigil Web
 
 The web application has a Go or Node (still deciding) backend built on the C library.
 
 The web app will have two variants: a server-rendered, no-javascript-required version, and a more responsive, but heavier, rich UI version. Both versions will support all UI features.
 
-# Sigil Native (Electron)
+### Sigil Native (Electron)
 
 The native app is an electron wrapper around the rich UI version web app.
+
+## Sigil Log
+
+Sigil log is a utility service that runs independently from the core sigil service and manages an activity log and history of changes.
 

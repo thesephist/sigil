@@ -1,4 +1,6 @@
-Sigil's main library has four functions:
+# Sigil Core Library
+
+The core library supplies functions necessary to interface with the database through an executable and some command line UIs.
 
 ```
 // types
@@ -45,6 +47,11 @@ int sgldelete(
 )
 
 // global and utility functions
+
+string normalize(
+  string task,
+) // return a normalized version with correctly formatted date at the end,
+  //  omitted default things filled in, normalize tags / lowercase, etc.
 
 Task sgltaskify(
   string task,
