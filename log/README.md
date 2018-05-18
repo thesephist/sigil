@@ -12,7 +12,7 @@ enum ActivityType {
   Update = 2,
 }
 
-struct Activity {
+class Activity {
   ActivityType type,
   string refid,
   string content, // if delete, null

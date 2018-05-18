@@ -11,7 +11,7 @@ struct Task {
   string project,
   int size,
   string description,
-  datetime d,
+  datetime due,
   string[] refs,
 }
 
